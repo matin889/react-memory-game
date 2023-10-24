@@ -1,19 +1,20 @@
 /* eslint-disable react/prop-types */
-const Card = ({ card, handleCardChoise, flipped, disabled }) => {
-  const flip = () => {
+
+const Card = ({ card, handleCardChoice, flipped, disabled }) => {
+  const handleClick = () => {
     if (!disabled) {
-      handleCardChoise(card);
+      handleCardChoice(card);
     }
   };
   return (
-    <div className="card-container">
+    <div className="card">
       <div className={flipped ? "flipped" : ""}>
-        <img className="frontcard" src={card.src} alt="Card front" />
+        <img className="front" src={card.src} alt="card-front" />
         <img
-          onClick={flip}
-          className="backCard"
-          src="images/cover.jpg"
-          alt="Card back"
+          className="back"
+          src="/images/cover.jpeg"
+          onClick={handleClick}
+          alt="card-back"
         />
       </div>
     </div>

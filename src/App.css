@@ -6,60 +6,59 @@
 }
 
 body {
-  background-color: #000000;
+  background-color: #e9e1e1;
 }
 .p {
   color: white;
 }
-
-.start-game {
-  background-color: antiquewhite;
+h2 {
+  color: white;
+  background: rgb(96, 96, 233);
+  border: 2px solid white;
+  border-radius: 20%;
 }
 
-.cards {
+.button {
+  border: 2px solid rgb(96, 96, 233);
+}
+.card-grid {
+  margin-top: 40px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  margin: 1rem;
+  grid-gap: 20px;
 }
-
-.card-container {
+.card {
   position: relative;
-  display: flex;
-  align-content: center;
-  flex-direction: row;
-  width: 80%;
-  margin: 1rem;
-  border: 3px black solid;
-  border-radius: 8%;
 }
-
-.card-container img {
+.card img {
   width: 100%;
-  height: 100%;
-  border-radius: 8%;
+  display: block;
+  border: 3px solid rgb(96, 96, 233);
+  border-radius: 10%;
 }
 
-/* For flipping */
-.card-container .frontCard {
+.card .front {
   transform: rotateY(90deg);
+  transition: all ease-in 0.2s;
   position: absolute;
-  z-index: 1;
 }
-
-.flipped .frontCard {
+.flipped .front {
   transform: rotateY(0deg);
+  transition-delay: 0.2s;
 }
-
-/* For flipping */
-.card-container .backCard {
+.card .back {
   transition: all ease-in 0.2s;
   transition-delay: 0.2s;
-  position: absolute;
-  right: -0px;
-  z-index: 2;
+}
+.flipped .back {
+  transform: rotateY(90deg);
+  transition-delay: 0.2s;
 }
 
-.flipped .backCard {
-  transform: rotateY(90deg);
-  transition-delay: 0;
+.turns {
+  color: black;
+  font-size: large;
+  font-weight: 700;
+  background: white;
+  border: 2px solid rgb(96, 96, 233);
 }
